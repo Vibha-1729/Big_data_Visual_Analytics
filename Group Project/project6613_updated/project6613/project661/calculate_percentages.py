@@ -1,0 +1,101 @@
+import pandas as pd
+
+# Load the statewise census data
+excel_path = 'statewise_aggregated_data.xlsx'
+df = pd.read_excel(excel_path)
+
+# Define the percentage calculation rules for each column
+PERCENTAGE_RULES = {
+    'Male_Literate': 'Male',
+    'Female_Literate': 'Female',
+    'Male_SC': 'Male',
+    'Female_SC': 'Female',
+    'Male_ST': 'Male',
+    'Female_ST': 'Female',
+    'Male_Workers': 'Male',
+    'Female_Workers': 'Female',
+    'Main_Workers': 'Population',
+    'Marginal_Workers': 'Population',
+    'Non_Workers': 'Population',
+    'Cultivator_Workers': 'Population',
+    'Agricultural_Workers': 'Population',
+    'Household_Workers': 'Population',
+    'Other_Workers': 'Population',
+    'Hindus': 'Population',
+    'Muslims': 'Population',
+    'Sikhs': 'Population',
+    'Jains': 'Population',
+    'Buddhists': 'Population',
+    'Others_Religions': 'Population',
+    'Religion_Not_Stated': 'Population',
+    'LPG_or_PNG_Households': 'Households',
+    'Housholds_with_Electric_Lighting': 'Households',
+    'Households_with_Internet': 'Households',
+    'Households_with_Computer': 'Households',
+    'Rural_Households': 'Households',
+    'Urban_Households': 'Households',
+    'Below_Primary_Education': 'Population',
+    'Primary_Education': 'Population',
+    'Middle_Education': 'Population',
+    'Secondary_Education': 'Population',
+    'Higher_Education': 'Population',
+    'Graduate_Education': 'Population',
+    'Other_Education': 'Population',
+    'Literate_Education': 'Population',
+    'Illiterate_Education': 'Population',
+    'Total_Education': 'Population',
+    'Age_Group_0_29': 'Population',
+    'Age_Group_30_49': 'Population',
+    'Age_Group_50': 'Population',
+    'Age not stated': 'Population',
+    'Households_with_Bicycle': 'Households',
+    'Households_with_Car_Jeep_Van': 'Households',
+    'Households_with_Scooter_Motorcycle_Moped': 'Households',
+    'Households_with_Telephone_Mobile_Phone_Landline_only': 'Households',
+    'Households_with_Telephone_Mobile_Phone_Mobile_only': 'Households',
+    'Households_with_Television': 'Households',
+    'Households_with_Telephone_Mobile_Phone': 'Households',
+    'Households_with_Telephone_Mobile_Phone_Both': 'Households',
+    'Households_with_TV_Computer_Laptop_Telephone_mobile_phone_and_Scooter_Car': 'Households',
+    'Ownership_Owned_Households': 'Households',
+    'Ownership_Rented_Households': 'Households',
+    'Type_of_latrine_facility_Pit_latrine_Households': 'Households',
+    'Type_of_latrine_facility_Other_latrine_Households': 'Households',
+    'Type_of_latrine_facility_Night_soil_disposed_into_open_drain_Households': 'Households',
+    'Type_of_latrine_facility_Flush_pour_flush_latrine_connected_to_other_system_Households': 'Households',
+    'Not_having_latrine_facility_within_the_premises_Alternative_source_Open_Households': 'Households',
+    'Main_source_of_drinking_water_Un_covered_well_Households': 'Households',
+    'Main_source_of_drinking_water_Handpump_Tubewell_Borewell_Households': 'Households',
+    'Main_source_of_drinking_water_Spring_Households': 'Households',
+    'Main_source_of_drinking_water_River_Canal_Households': 'Households',
+    'Main_source_of_drinking_water_Other_sources_Households': 'Households',
+    'Main_source_of_drinking_water_Other_sources_Spring_River_Canal_Tank_Pond_Lake_Other_sources__Households': 'Households',
+    'Location_of_drinking_water_source_Near_the_premises_Households': 'Households',
+    'Location_of_drinking_water_source_Within_the_premises_Households': 'Households',
+    'Main_source_of_drinking_water_Tank_Pond_Lake_Households': 'Households',
+    'Main_source_of_drinking_water_Tapwater_Households': 'Households',
+    'Main_source_of_drinking_water_Tubewell_Borehole_Households': 'Households',
+    'Location_of_drinking_water_source_Away_Households': 'Households',
+    'Power_Parity_Less_than_Rs_45000': 'Households',
+    'Power_Parity_Rs_45000_90000': 'Households',
+    'Power_Parity_Rs_90000_150000': 'Households',
+    'Power_Parity_Rs_45000_150000': 'Households',
+    'Power_Parity_Rs_150000_240000': 'Households',
+    'Power_Parity_Rs_240000_330000': 'Households',
+    'Power_Parity_Rs_150000_330000': 'Households',
+    'Power_Parity_Rs_330000_425000': 'Households',
+    'Power_Parity_Rs_425000_545000': 'Households',
+    'Power_Parity_Rs_330000_545000': 'Households',
+    'Power_Parity_Above_Rs_545000': 'Households',
+    'Total_Power_Parity': 'Households',
+}
+
+# Calculate percentage columns
+percent_df = df.copy()
+for col, denom_col in PERCENTAGE_RULES.items():
+    if col in percent_df.columns and denom_col in percent_df.columns:
+        percent_df[col + '_pct'] = (percent_df[col] / percent_df[denom_col]) * 100
+
+# Save the new DataFrame with percentage columns
+percent_df.to_excel('statewise_aggregated_data_percentages.xlsx', index=False)
+print('Percentage columns added and saved to statewise_aggregated_data_percentages.xlsx')

@@ -1,0 +1,14 @@
+india map gets distorted Ladakh ke side when attribute choose krte hain toh.
+when the name is too long of the attribute, the map gets hidden.
+map ke upar hover krne mein kai baar data white background me chup ja rha hai, for india map.
+kai jagah par koi cheez 0 hai, and there also we are showing minimum mein improvement potential mein that, so ig that makes less sense.
+Total education ki cheez was going over 100 in percentage.
+Jo attributes social category ke andar aarahe hai, they don't make much sense.
+Data mein to religion mein Christianity thi, but isme nhi hai? Ig it put it inside other religion ke section mein? check that
+water and sanitation wala subcateorgy khali reh gya hai, usme kuch nhi hai uska content household amenities ke andar chale gye hai.
+power parity show krna hai? uska data thoda ajeeb sa hai, check kro aap bhi ye?
+
+statewise mein jo ham performance matrix show kr rhe hai, sabka literacy ke sath hi kr rhe hai?
+statewise wale mein ek hi dropdown select metric ke andar sab clubbed hai, 2 banade kya uski jagah sepearely metric and submetric choose krne ke liey?
+Jahan bhi In likha hai agar waha logo aana possible hai map ka toh laga do, wrna hata do usko
+wahan 80+ metrics likha hai, can we justify that?
