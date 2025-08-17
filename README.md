@@ -81,29 +81,9 @@ pip install -r requirements.txt
 
 ### 3️⃣ Run App
 ```bash
-python app.py
+python newlatest.py
 ```  
 Open **http://127.0.0.1:8050/** in your browser 🎉  
 
 ---
 
-## 👥 Contributors
-👨‍💻 Aditya Anand  
-👨‍💻 Abdul Ahad  
-👨‍💻 Tanish Bansal  
-👨‍💻 Aurav Pratap Singh  
-👨‍💻 Kartikey Tomar  
-👩‍💻 Vibha Narayan  
-👩‍💻 Ananya Pandey  
-👩‍💻 Ruchika Raj  
-
----
-
-## 📜 License
-MIT License – see [LICENSE](LICENSE) for details.  
-
----
-
-## 🌟 Acknowledgments
-This project was developed as part of **CS661 (Data Visualization)** at **IIT Kanpur**, under the guidance of faculty mentors.  
-It bridges **data science & storytelling**, turning raw census data into a meaningful narrative for India’s future.  
