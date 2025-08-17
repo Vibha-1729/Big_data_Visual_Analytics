@@ -1,24 +1,109 @@
-# CS661(Big Data Visual Analytics)
-<<<<<<< HEAD
+# 🇮🇳 India Census Data Explorer
 
-Assignment 1 <br>
+**An Interactive Dashboard for Exploring India’s 2011 Census Data**  
+_Project for CS661: Data Visualization, IIT Kanpur_  
 
-Question 1<br>
-=======
-Assignment 1
-Question 1
->>>>>>> 6a1d2ef (Uploading Project Files)
-This script extracts a 2D isocontour from a 3D .vti (VTK ImageData) volume file and saves the contour as a .vtp (VTK PolyData) file.
-The isocontour represents locations in a 2D slice where the scalar field equals a specified isovalue, which can be between [(-1438, 630)].
-Command for running the script:<br>
-<pre>python extract_isocontour.py Isabel_2D.vti output.vtp ISOVALUE </pre>
-for eg:
-python extract_isocontour.py Isabel_2D.vti output.vtp 100
+---
 
-Question 2<br>
-The given code renders a 3D scalar field volume data of a Hurricane with optional Phong Shading feature.
-In order to run the script, write the line specifying --phong in the command to enable phong shading with the mentioned ambient, diffuse and specular values.<br>
-<pre>python task2_Volume_rendering.py Isabel_3D.vti --phong</pre>
+## 🌍 Overview
+India’s 2011 Census contains a treasure of demographic insights—literacy, employment, population, and more.  
+But in raw form (massive CSV/Excel sheets), it is dense and inaccessible.  
 
-Don't mention --phong in the command to disable phong shading<br>
-<pre>python task2_Volume_rendering.py Isabel_3D.vti</pre>
+This project transforms static census tables into a **dynamic, interactive visualization platform** built with **Plotly Dash**.  
+It empowers users—policy makers, researchers, and students—to **explore, compare, and analyze** India’s socio-economic landscape.  
+
+---
+
+## ✨ Features
+
+### 🗺 State-Level Analysis
+- Interactive **choropleth maps** of Indian states.  
+- Attribute-wise **rankings, pie charts, and box plots**.  
+- **Correlation heatmaps** to reveal inter-relationships.  
+
+### 📍 District Drilldown
+- District-level choropleths with **Top 5 / Bottom 5 highlights**.  
+- **Bubble & scatter plots** to visualize attribute-population dynamics.  
+- Rich **summary tables** with performance indicators.  
+
+### ⚖️ Comparison Mode
+- **Side-by-side state comparisons** with radar charts and dual maps.  
+- **Development pathway analysis**: current vs potential performance.  
+- Automated **textual insights** like “Kerala outperforms the national average by 15% in literacy.”  
+
+### 📊 Statistical Toolkit
+- Box plots for distributions, quartiles, and outliers.  
+- Correlation matrices across literacy, employment, and gender metrics.  
+- Dynamic dashboards updated with every user interaction.  
+
+---
+
+## 🛠 Tech Stack
+- **Framework:** Plotly Dash (Python)  
+- **Visualization:** Plotly Express, Graph Objects  
+- **Data Processing:** Pandas, NumPy, GeoPandas  
+- **Mapping:** GeoJSON for boundaries (states/districts)  
+
+---
+
+## 🔄 Data Pipeline
+1. **Extract** raw census data from CSV/Excel.  
+2. **Transform** → normalize values, fix datatypes, unify labels.  
+3. **Load** into cleaned datasets integrated with GeoJSON for spatial analysis.  
+
+---
+
+## ⚡ Challenges & Solutions
+- **High-dimensional data** → Normalized to consistent metrics.  
+- **GeoJSON mismatches** → Name-mapping scripts in preprocessing.  
+- **Evolving geography** → Telangana & Ladakh handled with flags/greyed visuals.  
+- **Performance issues** → Optimized callbacks and component interactivity.  
+- **Visual clarity** → Designed responsive charts & structured insights.  
+
+---
+
+## 🚀 Quick Start
+
+### 1️⃣ Clone Repository
+```bash
+git clone https://github.com/your-username/CS661.git
+cd CS661
+```
+
+### 2️⃣ Install Dependencies
+```bash
+python -m venv venv
+source venv/bin/activate   # Mac/Linux
+venv\Scripts\activate    # Windows
+
+pip install -r requirements.txt
+```
+
+### 3️⃣ Run App
+```bash
+python app.py
+```  
+Open **http://127.0.0.1:8050/** in your browser 🎉  
+
+---
+
+## 👥 Contributors
+👨‍💻 Aditya Anand  
+👨‍💻 Abdul Ahad  
+👨‍💻 Tanish Bansal  
+👨‍💻 Aurav Pratap Singh  
+👨‍💻 Kartikey Tomar  
+👩‍💻 Vibha Narayan  
+👩‍💻 Ananya Pandey  
+👩‍💻 Ruchika Raj  
+
+---
+
+## 📜 License
+MIT License – see [LICENSE](LICENSE) for details.  
+
+---
+
+## 🌟 Acknowledgments
+This project was developed as part of **CS661 (Data Visualization)** at **IIT Kanpur**, under the guidance of faculty mentors.  
+It bridges **data science & storytelling**, turning raw census data into a meaningful narrative for India’s future.  
