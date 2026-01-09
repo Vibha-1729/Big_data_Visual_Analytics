@@ -66,7 +66,7 @@ It empowers users—policy makers, researchers, and students—to **explore, com
 
 ### 1️⃣ Clone Repository
 ```bash
-git clone https://github.com/your-username/CS661.git
+git clone https://github.com/your-username/Big_data_Visual_Analytics.git
 cd CS661
 ```
 
